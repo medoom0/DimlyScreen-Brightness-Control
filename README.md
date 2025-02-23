@@ -2,8 +2,7 @@
 
 Dimly is a simple Windows app that lets you control your screen brightness beyond the system limits. It works by adding a transparent overlay that dims the screen, perfect for working in low-light environments or reducing eye strain.
 
-![image](https://github.com/user-attachments/assets/1974b981-9694-459e-a509-cc88d3850529)  
-![image](https://github.com/user-attachments/assets/f79b1500-8329-41d8-9835-d0638a87d140)
+![Untitled-1](https://github.com/user-attachments/assets/527a3992-fa3b-4240-8fb2-8ebecda310cc)
 
 ## ✨ Features
 
