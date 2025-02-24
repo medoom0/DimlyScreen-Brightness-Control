@@ -36,15 +36,16 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.MinToTray = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.brightnessSlider)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // resetButton
             // 
-            this.resetButton.Location = new System.Drawing.Point(118, 125);
+            this.resetButton.Location = new System.Drawing.Point(125, 125);
             this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(157, 29);
+            this.resetButton.Size = new System.Drawing.Size(155, 29);
             this.resetButton.TabIndex = 0;
             this.resetButton.Text = "Reset to Default";
             this.resetButton.UseVisualStyleBackColor = true;
@@ -52,10 +53,10 @@
             // 
             // brightnessSlider
             // 
-            this.brightnessSlider.Location = new System.Drawing.Point(83, 63);
+            this.brightnessSlider.Location = new System.Drawing.Point(79, 60);
             this.brightnessSlider.Maximum = 100;
             this.brightnessSlider.Name = "brightnessSlider";
-            this.brightnessSlider.Size = new System.Drawing.Size(228, 56);
+            this.brightnessSlider.Size = new System.Drawing.Size(246, 56);
             this.brightnessSlider.TabIndex = 1;
             this.brightnessSlider.TickFrequency = 10;
             this.brightnessSlider.Value = 30;
@@ -65,7 +66,7 @@
             // 
             this.brightnessLabel.AutoSize = true;
             this.brightnessLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brightnessLabel.Location = new System.Drawing.Point(113, 26);
+            this.brightnessLabel.Location = new System.Drawing.Point(125, 26);
             this.brightnessLabel.Name = "brightnessLabel";
             this.brightnessLabel.Size = new System.Drawing.Size(155, 25);
             this.brightnessLabel.TabIndex = 2;
@@ -92,14 +93,26 @@
             this.notifyIcon.Text = "Dimly - Brightness Control";
             this.notifyIcon.Visible = true;
             // 
+            // MinToTray
+            // 
+            this.MinToTray.Location = new System.Drawing.Point(363, 12);
+            this.MinToTray.Name = "MinToTray";
+            this.MinToTray.Size = new System.Drawing.Size(63, 29);
+            this.MinToTray.TabIndex = 3;
+            this.MinToTray.Text = "Tray";
+            this.MinToTray.UseVisualStyleBackColor = true;
+            this.MinToTray.Click += new System.EventHandler(this.MinToTray_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 166);
+            this.ClientSize = new System.Drawing.Size(438, 166);
+            this.Controls.Add(this.MinToTray);
             this.Controls.Add(this.brightnessLabel);
             this.Controls.Add(this.brightnessSlider);
             this.Controls.Add(this.resetButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -120,6 +133,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem Exit;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.Button MinToTray;
     }
 }
 

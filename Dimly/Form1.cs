@@ -47,7 +47,7 @@ namespace Dimly
         private void InitializeTimer()
         {
             clickThroughTimer = new Timer();
-            clickThroughTimer.Interval = 300; 
+            clickThroughTimer.Interval = 300;
             clickThroughTimer.Tick += (sender, e) =>
             {
                 MakeOverlayClickThrough();
@@ -58,8 +58,18 @@ namespace Dimly
         private void SetupTrayMenu()
         {
             trayMenu = new ContextMenuStrip();
+            trayMenu.Items.Add("Show", null, ShowFormFromTray);
             trayMenu.Items.Add("Exit", null, exitToolStripMenuItem_Click);
             notifyIcon.ContextMenuStrip = trayMenu;
+            notifyIcon.MouseClick += NotifyIcon_MouseClick;
+        }
+
+        private void NotifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ShowFormFromTray(sender, e);
+            }
         }
 
         private void MakeOverlayClickThrough()
@@ -72,18 +82,29 @@ namespace Dimly
         {
             overlay.Opacity = brightnessSlider.Value / 100.0;
             brightnessLabel.Text = $"Brightness: {brightnessSlider.Value}%";
-
-            clickThroughTimer.Stop(); 
-            clickThroughTimer.Start(); 
+            clickThroughTimer.Stop();
+            clickThroughTimer.Start();
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
             brightnessSlider.Value = 30;
             brightnessLabel.Text = "Brightness: 30%";
-
             overlay.Opacity = 0.3;
-            MakeOverlayClickThrough(); 
+            MakeOverlayClickThrough();
+        }
+
+        private void MinToTray_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            notifyIcon.Visible = true;
+        }
+
+        private void ShowFormFromTray(object sender, EventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
+            notifyIcon.Visible = false;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
